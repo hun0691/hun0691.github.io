@@ -38,6 +38,20 @@ function openPrnc(){
     window.open(prncSite3);
 }
 
+
+function openPrnc2(srchTxt){
+   
+    let prncSite1="https://accenthero.com/app/pronunciation-practice/russian/standard/"+srchTxt; //acenhero
+    let prncSite2="https://ru.wiktionary.org/wiki/"+srchTxt; //wiktionary
+    let prncSite3="https://ko.forvo.com/word/"+srchTxt+"/#ru"; //forvo
+
+
+
+    window.open(prncSite1);
+    window.open(prncSite2);
+    window.open(prncSite3);
+}
+
 function searchParam(key) {
   return new URLSearchParams(location.search).get(key);
 };
@@ -46,7 +60,7 @@ function searchParam(key) {
 function openAuto(){
     let txt=searchParam("txt");
     if(txt != 'undefined' && txt != undefined && txt != null && txt != "null"){
-        alert(txt);
+        openPrnc2(txt);
     }
 }
 
