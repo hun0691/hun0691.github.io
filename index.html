@@ -1,0 +1,68 @@
+<html>
+
+<head>
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+    <style>
+        input {
+        width: 500px;
+        height: 32px;
+        font-size: 15px;
+        border: 0;
+        border-radius: 15px;
+        outline: none;
+        padding-left: 10px;
+        background-color: rgb(233, 233, 233);
+        }
+    
+       </style>    
+       
+<script>
+function enterkey() {
+	if (window.event.keyCode == 13) {
+    	openPrnc();// 엔터키가 눌렸을 때
+    }
+}
+
+function openPrnc(){
+    let srchTxt=document.getElementById("serh_P").value; 
+    
+    let prncSite1="https://accenthero.com/app/pronunciation-practice/russian/standard/"+srchTxt; //acenhero
+    let prncSite2="https://ru.wiktionary.org/wiki/"+srchTxt; //wiktionary
+    let prncSite3="https://ko.forvo.com/word/"+srchTxt+"/#ru"; //forvo
+
+
+
+    window.open(prncSite1);
+    window.open(prncSite2);
+    window.open(prncSite3);
+}
+
+function searchParam(key) {
+  return new URLSearchParams(location.search).get(key);
+};
+
+
+function openAuto(){
+    let txt=searchParam("txt");
+    if(txt != 'undefined' && txt != undefined && txt != null && txt != "null"){
+        alert(txt);
+    }
+}
+
+
+
+</script>    
+
+
+</head>
+
+<input type="text" id="serh_P" onkeyup="enterkey()">
+
+       
+<script>
+$(document).ready(function(){
+    openAuto()
+});
+</script>   
+</html>
